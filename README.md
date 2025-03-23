@@ -1,5 +1,5 @@
 # 🏆 **Parko – Smart Parking, Smarter Travel** 🚗  
-## Deployed [HERE 🔗](https://parko-user.vercel.app/)
+## Deployed (Specially for Mobile) [HERE 🔗](https://parko-user.vercel.app/)  
 ### **Developed by Team 20 | SolVIT Hackathon Submission**  
 
 🔗 **Forked from** [devankit57/parko](https://github.com/devankit57/parko)  
@@ -10,11 +10,11 @@
 
 **Parko** is an **AI-powered smart parking and travel management system** designed to revolutionize urban mobility. It provides:  
 
-✅ **Real-time parking availability** 📍  
-✅ **Automated reservation & payments** 💳  
-✅ **QR-based entry/exit verification** 🔑  
-✅ **AI-generated travel plans** 🗺️  
-✅ **Seamless user experience** 📱  
+💯 **Real-time parking availability** 📍  
+💳 **Automated reservation & payments** 💳  
+🔑 **QR-based entry/exit verification** 🔑  
+📊 **AI-generated travel plans** 📺  
+📱 **Seamless user experience** 📱  
 
 By integrating **Next.js, MongoDB, Razorpay, and AI**, Parko makes urban travel more **efficient, secure, and sustainable.** 🌱  
 
@@ -24,7 +24,7 @@ By integrating **Next.js, MongoDB, Razorpay, and AI**, Parko makes urban travel 
 
 🚦 **Urban parking is inefficient** – Finding a spot is time-consuming, leading to congestion.  
 🕵️ **Manual systems are slow & error-prone** – Traditional parking lacks automation.  
-⏳ **Travel planning is chaotic** – Poor route management wastes time & fuel.  
+🗓️ **Travel planning is chaotic** – Poor route management wastes time & fuel.  
 
 ### ✅ **Parko solves this by providing:**  
 ✔️ **Smart parking management** with live updates.  
@@ -51,14 +51,19 @@ By integrating **Next.js, MongoDB, Razorpay, and AI**, Parko makes urban travel 
 ✔️ **Instant invoice generation** for a hassle-free experience.  
 ✔️ **Secure and automated checkout process.**  
 
-### 📱 **User-Friendly Dashboard**  
+### 🔒 **API Security**  
+✔️ **Responses are AES-356 encrypted** ensuring **secure data transmission.**  
+✔️ **Environment Variables are used** to keep sensitive credentials safe.  
+✔️ **Protected endpoints** prevent unauthorized access.  
+
+### 📲 **User-Friendly Dashboard**  
 ✔️ **Intuitive UI** with easy navigation.  
 ✔️ **Real-time notifications & updates.**  
 ✔️ **Mobile-first design for accessibility.**  
 
 ---
 
-## 🏗️ **System Architecture**  
+## 🛠️ **System Architecture**  
 
 ### **Frontend (Next.js & React)**  
 🚀 **Built with:**  
@@ -80,105 +85,68 @@ By integrating **Next.js, MongoDB, Razorpay, and AI**, Parko makes urban travel 
 3. **QR Code is generated** for exit verification.  
 
 ### **AI Module (Travel Planning)**  
-🧠 **AI-Generated Plans**  
+🤓 **AI-Generated Plans**  
 - Accepts user input (destination, duration, notes).  
 - Returns **optimized routes & travel schedules.**  
 - Plans are **stored & retrieved for future reference.**  
 
 ---
 
-## 🛠️ **Technology Stack**  
+## 📞 **Parking Handler Side Application**  
 
-| **Component**      | **Technology Used**                        |  
-|-------------------|--------------------------------------|  
-| **Frontend**      | Next.js, React, Tailwind CSS, Framer Motion  |  
-| **Backend**       | Node.js, Next.js API Routes, MongoDB (Mongoose)  |  
-| **Authentication**| Next-Auth (Google Sign-In)  |  
-| **Database**      | MongoDB (Mongoose ORM)  |  
-| **Payments**      | Razorpay API  |  
-| **AI Module**     | AI-based travel planning integration |  
+🔗 **Admin Panel:** [parko-handler.vercel.app](https://parko-handler.vercel.app)  
+🔐 **Credentials:**  
+- **Username:** admin  
+- **Password:** admin123  
+
+This is used to **manage parking slots, user entries, and transaction verifications.**  
 
 ---
 
-## 📥 **Installation & Setup**  
+## 📚 **Directory Structure**  
 
-### **1️⃣ Clone the Repository**  
-```sh
-git clone https://github.com/TechieSamosa/parko.git
-cd parko
+```
+/PARKO-USER
+├── models
+├── pages
+│   ├── api
+│   │   ├── auth
+│   │   │   └── [...nextauth].js
+│   │   ├── invoices.js
+│   │   ├── parking.js
+│   │   ├── razorpay.js
+│   │   ├── travel-history.js
+│   │   ├── travel-plan.js
+│   │   └── verify-payment.js
+│   ├── dashboard.js
+│   └── index.js
+├── public
+├── styles
+├── utils
+│   └── db.js
+├── README.md
+└── tailwind.config.js
 ```
 
-### **2️⃣ Install Dependencies**  
-```sh
-npm install
-# or
-yarn install
-```
+---
 
-### **3️⃣ Setup Environment Variables**  
-Create a `.env.local` file and add:  
-```ini
-NEXT_PUBLIC_RAZORPAY_KEY_ID=your_razorpay_key_id
-MONGODB_URI=your_mongodb_connection_string
-NEXTAUTH_URL=http://localhost:3000
-```
+## 📷 **Project Screenshots**  
 
-### **4️⃣ Run the Application**  
-```sh
-npm run dev
-# or
-yarn dev
-```
-🔗 Open **http://localhost:3000** in your browser.  
+### **Parko Features**
+![Parko Features](<WhatsApp Image 2025-03-23 at 16.54.54_5ddd3b5b.jpg>)
+
+
+### **Mobile UI Screenshots**  
+![Mobile Dashboard](<WhatsApp Image 2025-03-23 at 16.54.55_a4dad45d.jpg>)
+![Mobile Payment](<WhatsApp Image 2025-03-23 at 16.54.56_7dfb6702.jpg>)
+
+### **Parko**  
+![Parko](<WhatsApp Image 2025-03-23 at 16.54.56_0d03e171.jpg>)
+
 
 ---
 
-## 📝 **Usage Guide**  
-
-### **📌 Login & Dashboard**  
-- Sign in using **Google** authentication.  
-- Navigate through **Home, Plan Trip, Parking & Settings.**  
-
-### **🔍 Parking Management**  
-- Search & **reserve parking spots.**  
-- View & pay for **invoices digitally.**  
-- **QR code verification** for smooth entry/exit.  
-
-### **🧠 AI Travel Planning**  
-- Enter destination & trip details.  
-- Receive an **AI-generated travel plan.**  
-- Store & retrieve previous plans.  
-
-### **💰 Payments & Invoicing**  
-- **Razorpay checkout** for seamless transactions.  
-- View invoices & generate **QR codes for verification.**  
-
----
-
-## 🌍 **Impact & Benefits**  
-
-✅ **Efficiency:** Reduces parking search time.  
-✅ **Security:** QR-based entry prevents unauthorized access.  
-✅ **Cost Savings:** Optimized routes cut fuel usage.  
-✅ **User Experience:** Transparent invoicing & easy payments.  
-✅ **Scalability:** Adaptable for **cities, corporate spaces & events.**  
-✅ **Sustainability:** Supports **eco-friendly urban mobility.**  
-
----
-
-## 👨‍💻 **Team 20 – SolVIT Hackathon**  
-
-**Developed by:**  
-👨‍💻 **[Ankit](https://www.github.com/devankit57)** – 22MIM100771  
-👩‍💻 **[Shreya Raj Gupta](https://github.com/Shreya-Raj-Gupta)** – 22BHI101432  
-👨‍💻 **[Aditya Sachin Khamitkar](https://www.github.com/TechieSamosa)** – 22MIP100063  
-👨‍💻 **[Vatsal Mahajan](https://www.github.com/VatsalCodes44)** – 24BCE102564  
-
-🔗 **Forked from:** [devankit57/parko](https://github.com/devankit57/parko)  
-
----
-
-## 🏆 **Why Parko Should Win?**  
+## 🌟 **Why Parko Should Win?**  
 
 🔥 **AI + Smart Parking = Innovation** – A unique blend of AI-driven travel planning & real-time parking.  
 💰 **Digital Transformation** – Automating payments, reservations & verification.  
@@ -189,14 +157,9 @@ yarn dev
 
 ---
 
-## 📜 **License**  
-
-🔓 **MIT License** – Free to use, modify & distribute. See the [LICENSE](LICENSE) file for details.  
-
----
-
-### **📢 Final Thoughts**  
+## 💎 **Final Thoughts**  
 > 🚀 **Parko is not just an idea; it’s a revolution in smart mobility.**  
 > **Vote for innovation. Vote for impact. Vote for Parko!** 🌍🏆  
 
 ---
+
