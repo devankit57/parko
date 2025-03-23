@@ -212,8 +212,8 @@ useEffect(() => {
         const verifyData = await verifyRes.json();
 
         if (verifyData.success) {
-          toast.success("Payment Verified & Order Updated!");
-          router.push("/dashboard"); // Redirect to orders page after payment
+          toast.success("Payment Verified & Pass Generated");
+          window.location.reload(); // Reload the page instead of redirecting
         } else {
           toast.error("Payment verification failed. Please contact support.");
         }
