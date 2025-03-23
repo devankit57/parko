@@ -19,12 +19,14 @@
     "next-auth": "^4.24.11",
     "qrcode": "^1.5.4",
     "qrcode.react": "^4.2.0",
+    "razorpay": "^2.9.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
     "react-qr-code": "^2.0.15",
     "react-qrcode-logo": "^3.0.0",
+    "react-toastify": "^11.0.5",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
