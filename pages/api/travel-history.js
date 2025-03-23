@@ -1,21 +1,21 @@
-import { getSession } from "next-auth/react";
-import { MongoClient } from "mongodb";
-import connectDB from "../../utils/db"; // Ensure this is correctly set up
+import { getServerSession } from "next-auth";
+import { authOptions } from "./auth/[...nextauth]"; // Ensure correct auth config import
+import connectDB from "../../utils/db";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
-  const session = await getSession({ req });
+  const session = await getServerSession(req, res, authOptions);
 
-  if (!session || !session.user?.email) {
+  if (!session) {
     return res.status(401).json({ error: "Unauthorized" });
   }
 
   try {
     const db = await connectDB();
-    const collection = db.collection("plans"); // Using "plans" collection
+    const collection = db.collection("plans");
 
     // Fetch all plans for the logged-in user
     const history = await collection

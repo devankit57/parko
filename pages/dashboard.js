@@ -64,20 +64,28 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-
   const fetchHistory = async () => {
     try {
-      const response = await fetch("/api/travel-history");
+      const response = await fetch("/api/travel-history", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", // Ensure session cookies are sent
+      });
+  
       const data = await response.json();
+  
       if (response.ok) {
         setHistory(data.history);
       } else {
-        setError("Error fetching history.");
+        setError(data.error || "Error fetching history.");
       }
     } catch (error) {
       setError("Network error. Could not fetch history.");
     }
   };
+  
 
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
@@ -257,13 +265,36 @@ const Dashboard = () => {
 
               {/* Parking Submenu Content */}
               <div className="mt-6">
-                {parkingSubTab === "search" && (
-                  <div>
-                    <h4 className="text-lg font-semibold">Search for Parking</h4>
-                    <p className="text-gray-400 mt-2">Find available parking spots in your area.</p>
-                    {/* Add search functionality here */}
-                  </div>
-                )}
+              {parkingSubTab === "search" && (
+  <div>
+    <h4 className="text-lg font-semibold">Search for Parking</h4>
+    <p className="text-gray-400 mt-2">Find available parking spots in your area.</p>
+
+    {/* Search Box */}
+    <input
+      type="text"
+      placeholder="Enter location or parking ID"
+      className="w-full p-2 mt-2 rounded bg-gray-700 text-white"
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+    />
+
+    {/* Parking Results */}
+    <div className="mt-4">
+      {filteredParking.length > 0 ? (
+        filteredParking.map((spot, index) => (
+          <div key={index} className="p-3 bg-gray-700 rounded-lg mt-2">
+            <h5 className="text-lg font-semibold">{spot.name}</h5>
+            <p className="text-gray-400">{spot.location}</p>
+          </div>
+        ))
+      ) : (
+        <p className="text-gray-400 mt-2">No matching parking spots found.</p>
+      )}
+    </div>
+  </div>
+)}
+
 
                 {parkingSubTab === "invoice" && (
                   <div>
