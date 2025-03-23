@@ -1,5 +1,5 @@
 # 🏆 **Parko – Smart Parking, Smarter Travel** 🚗  
-## Deployed <a href="https://parko-user.vercel.app/" target="_blank">HERE 🔗</a>
+## Deployed [HERE 🔗](https://parko-user.vercel.app/)
 ### **Developed by Team 20 | SolVIT Hackathon Submission**  
 
 🔗 **Forked from** [devankit57/parko](https://github.com/devankit57/parko)  
